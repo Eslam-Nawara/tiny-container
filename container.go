@@ -1,4 +1,4 @@
-package main
+package tinycontainer
 
 import (
 	"fmt"
@@ -7,24 +7,11 @@ import (
 	"path"
 	"strconv"
 	"syscall"
+
+	"github.com/Eslam-Nawara/tinycontainer/internal/namegenerator"
 )
 
-func main() {
-	if len(os.Args) < 2 {
-		panic("Too few arguments")
-	}
-
-	switch os.Args[1] {
-	case "run":
-		run(os.Args[2:])
-	case "child":
-		child(os.Args[2], os.Args[3:])
-	default:
-		panic("invalid command")
-	}
-}
-
-func run(args []string) {
+func Run(args []string) {
 	fmt.Println("Running as", os.Getpid())
 	cmd := exec.Command("/proc/self/exe", append([]string{"child"}, os.Args[2:]...)...)
 	cmd.Stdin = os.Stdin
@@ -45,12 +32,12 @@ func run(args []string) {
 	check(cmd.Run())
 }
 
-func child(command string, args []string) {
+func Child(command string, args []string) {
 	fmt.Println("Running as", os.Getpid())
 
 	newCgroup()
 
-	check(syscall.Sethostname(nameGenerator()))
+	check(syscall.Sethostname(namegenerator.nameGenerator()))
 	check(syscall.Chroot("./rootfs"))
 	check(syscall.Chdir("/"))
 	check(syscall.Mount("proc", "proc", "proc", 0, ""))
