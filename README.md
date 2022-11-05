@@ -12,7 +12,7 @@ Simple Container implementation in go using linux namespaces and cgroups.
 go install github.com/Eslam-Nawara/tinycontainer/cmd/container@latest
 ```
 **Install the container requirements**
-- Download and the initialization script `install.sh` in your work space. 
+- Download and the run script `install.sh` in your work space. 
 ```sh
 curl -o install.sh https://github.com/Eslam-Nawara/tinycontainer/install.sh
  ```
