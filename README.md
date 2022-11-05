@@ -19,6 +19,9 @@ curl -o install.sh https://github.com/Eslam-Nawara/tinycontainer/install.sh
  ```sh
 chmod +x install.sh
 ```
+ ```sh
+./install.sh
+```
 - Run the container
 ```sh
  container run <Cmd> <args>
