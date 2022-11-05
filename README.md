@@ -14,7 +14,7 @@ go install github.com/Eslam-Nawara/tinycontainer/cmd/container@latest
 **Install the container requirements**
 - Download and the run script `install.sh` in your work space. 
 ```sh
-curl -o install.sh https://github.com/Eslam-Nawara/tinycontainer/install.sh
+wget https://github.com/Eslam-Nawara/tinycontainer/raw/main/install.sh
  ```
  ```sh
 chmod +x install.sh
@@ -24,5 +24,5 @@ chmod +x install.sh
 ```
 - Run the container
 ```sh
- container run <Cmd> <args>
+ sudo container run <Cmd> <args>
 ```
