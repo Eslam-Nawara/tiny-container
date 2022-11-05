@@ -6,12 +6,50 @@ import (
 )
 
 var (
-	left = []string{
-		"confident",
-	}
-	right = []string{
-		"agnesi",
-	}
+    left = []string{
+        "admiring",
+        "adoring",
+        "affectionate",
+        "agitated",
+        "amazing",
+        "angry",
+        "awesome",
+        "beautiful",
+        "blissful",
+        "bold",
+        "boring",
+        "brave",
+        "busy",
+        "charming",
+        "clever",
+        "cool",
+        "compassionate",
+        "competent",
+        "condescending",
+        "confident",
+    }
+    right = []string{
+        "agnesi",
+        "albattani",
+        "allen",
+        "almeida",
+        "antonelli",
+        "archimedes",
+        "ardinghelli",
+        "aryabhata",
+        "austin",
+        "babbage",
+        "banach",
+        "banzai",
+        "bardeen",
+        "bartik",
+        "bassi",
+        "beaver",
+        "bell",
+        "benz",
+        "bhabha",
+        "black",
+    }
 )
 
 func nameGenerator() []byte {

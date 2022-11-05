@@ -8,7 +8,7 @@ import (
 	"strconv"
 	"syscall"
 
-	"github.com/Eslam-Nawara/tinycontainer/internal/namegenerator"
+	generator "github.com/Eslam-Nawara/tinycontainer/internal/namegenerator"
 )
 
 func Run(args []string) {
@@ -37,7 +37,7 @@ func Child(command string, args []string) {
 
 	newCgroup()
 
-	check(syscall.Sethostname(namegenerator.nameGenerator()))
+	check(syscall.Sethostname(generator.nameGenerator()))
 	check(syscall.Chroot("./rootfs"))
 	check(syscall.Chdir("/"))
 	check(syscall.Mount("proc", "proc", "proc", 0, ""))
