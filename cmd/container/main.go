@@ -2,7 +2,6 @@ package main
 
 import (
 	"os"
-	"os/exec"
 
 	"github.com/Eslam-Nawara/tinycontainer"
 )
@@ -11,9 +10,6 @@ func main() {
 	if len(os.Args) < 2 {
 		panic("Too few arguments")
 	}
-
-	cmd := exec.Command("./install.sh")
-	cmd.Run()
 
 	switch os.Args[1] {
 	case "run":
