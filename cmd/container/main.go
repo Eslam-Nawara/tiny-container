@@ -2,6 +2,7 @@ package main
 
 import (
 	"os"
+	"os/exec"
 
 	"github.com/Eslam-Nawara/tinycontainer"
 )
@@ -11,12 +12,20 @@ func main() {
 		panic("Too few arguments")
 	}
 
-	switch os.Args[1] {
+	initContainer()
+	
+    switch os.Args[1] {
 	case "run":
 		tinycontainer.Run(os.Args[2:])
 	case "child":
 		tinycontainer.Child(os.Args[2], os.Args[3:])
 	default:
 		panic("invalid command")
+	}
+}
+
+func initContainer() {
+	if _, err := os.Stat("rootfs"); os.IsNotExist(err) {
+		exec.Command("bash", "-c", "./install.sh").Output()
 	}
 }
