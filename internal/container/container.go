@@ -1,4 +1,4 @@
-package tinycontainer
+package container
 
 import (
 	"fmt"

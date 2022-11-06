@@ -4,7 +4,7 @@ import (
 	"os"
 	"os/exec"
 
-	"github.com/Eslam-Nawara/tinycontainer"
+	"github.com/Eslam-Nawara/tinycontainer/internal/container"
 )
 
 func main() {
@@ -13,12 +13,12 @@ func main() {
 	}
 
 	initContainer()
-	
-    switch os.Args[1] {
+
+	switch os.Args[1] {
 	case "run":
-		tinycontainer.Run(os.Args[2:])
+		container.Run(os.Args[2:])
 	case "child":
-		tinycontainer.Child(os.Args[2], os.Args[3:])
+		container.Child(os.Args[2], os.Args[3:])
 	default:
 		panic("invalid command")
 	}
