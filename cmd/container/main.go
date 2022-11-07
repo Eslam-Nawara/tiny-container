@@ -4,7 +4,7 @@ import (
 	"os"
 	"os/exec"
 
-	"github.com/Eslam-Nawara/tinycontainer/internal/container"
+	"github.com/Eslam-Nawara/tiny-container/internal/container"
 )
 
 func main() {

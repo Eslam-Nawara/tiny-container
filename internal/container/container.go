@@ -8,7 +8,7 @@ import (
 	"strconv"
 	"syscall"
 
-	"github.com/Eslam-Nawara/tinycontainer/internal/namegenerator"
+	"github.com/Eslam-Nawara/tiny-container/internal/namegenerator"
 )
 
 func Run(args []string) {
