@@ -3,4 +3,5 @@ chmod a+x busybox
 mkdir -p  /tmp/rootfs/proc /tmp/rootfs/dev rootfs/bin
 ./busybox --install rootfs/bin
 mv rootfs/bin /tmp/rootfs
-rm -r busybox rootfs
+rm -r rootfs
+rm busybox
