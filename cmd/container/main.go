@@ -13,7 +13,6 @@ func main() {
 	}
 
 	initContainer()
-
 	switch os.Args[1] {
 	case "run":
 		container.Run(os.Args[2:])
@@ -26,8 +25,8 @@ func main() {
 
 func initContainer() {
 	if _, err := os.Stat("/tmp/rootfs"); os.IsNotExist(err) {
-		exec.Command("wget", "https://github.com/Eslam-Nawara/tiny-container/raw/main/cmd/container/install.sh").Wait()
-		exec.Command("bash", "-c", "chmod +x install.sh").Wait()
+		exec.Command("curl", "-O", "https://github.com/Eslam-Nawara/tiny-container/raw/main/cmd/container/install.sh").Output()
+		os.Chmod("install.sh", 0777)
 		exec.Command("bash", "-c", "./install.sh").Wait()
 	}
 }
