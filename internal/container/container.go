@@ -38,7 +38,7 @@ func Child(command string, args []string) {
 	newCgroup()
 
 	check(syscall.Sethostname(namegenerator.NameGenerator()))
-	check(syscall.Chroot("./rootfs"))
+	check(syscall.Chroot("/tmp/rootfs"))
 	check(syscall.Chdir("/"))
 	check(syscall.Mount("proc", "proc", "proc", 0, ""))
 	check(syscall.Mount("dev", "dev", "tmpfs", 0, ""))

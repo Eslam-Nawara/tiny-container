@@ -25,7 +25,7 @@ func main() {
 }
 
 func initContainer() {
-	if _, err := os.Stat("rootfs"); os.IsNotExist(err) {
+	if _, err := os.Stat("/tmp/rootfs"); os.IsNotExist(err) {
 		exec.Command("bash", "-c", "./install.sh").Output()
 	}
 }
