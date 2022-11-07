@@ -25,9 +25,9 @@ func main() {
 
 func initContainer() {
 	if _, err := os.Stat("/tmp/rootfs"); os.IsNotExist(err) {
-		exec.Command("wget", "", "https://github.com/Eslam-Nawara/tiny-container/raw/main/install.sh").Output()
+		exec.Command("wget", "https://github.com/Eslam-Nawara/tiny-container/raw/main/install.sh").Output()
 		os.Chmod("install.sh", 0777)
 		exec.Command("bash", "-c", "./install.sh").Output()
-        os.Remove("install.sh")
+		os.Remove("install.sh")
 	}
 }
