@@ -12,9 +12,9 @@ func main() {
 		panic("Too few arguments")
 	}
 
-	initContainer()
 	switch os.Args[1] {
 	case "run":
+		initContainer()
 		container.Run(os.Args[2:])
 	case "child":
 		container.Child(os.Args[2], os.Args[3:])

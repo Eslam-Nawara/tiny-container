@@ -12,7 +12,6 @@ import (
 )
 
 func Run(args []string) {
-	fmt.Println("Running as", os.Getpid())
 	cmd := exec.Command("/proc/self/exe", append([]string{"child"}, os.Args[2:]...)...)
 	cmd.Stdin = os.Stdin
 	cmd.Stdout = os.Stdout
@@ -33,7 +32,6 @@ func Run(args []string) {
 }
 
 func Child(command string, args []string) {
-	fmt.Println("Running as", os.Getpid())
 
 	newCgroup()
 
@@ -64,6 +62,7 @@ func newCgroup() {
 
 func check(err error) {
 	if err != nil {
-		panic(err)
+		fmt.Fprintln(os.Stderr, err)
+		os.Exit(1)
 	}
 }
